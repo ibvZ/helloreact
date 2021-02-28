@@ -2,7 +2,3 @@
     grid-area: c; /*псевдоним*/
     background-color: cornflowerblue;
 }
-
-.item {
-    color: greenyellow;
-}
