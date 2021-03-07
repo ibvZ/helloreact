@@ -1,3 +1,31 @@
+.messageBox {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    margin-bottom: 5px;
+    border: 1px solid #3f3f3f;
+    border-radius: 5px;
+}
+
+.messageBoxMine {
+    display: grid;
+    grid-template-columns: 11fr 1fr;
+    background-color: #d3d3d3;
+    align-text: right;
+    margin-bottom: 5px;
+    border: 1px solid #3f3f3f;
+    border-radius: 5px;
+}
+
 .message {
-    color: white;
+    padding: 25px;
+}
+
+.messageMine {
+    padding: 25px;
+    text-align:right;
+}
+
+.messageAva img {
+    padding: 10px;
+    border-radius: 50px;
 }

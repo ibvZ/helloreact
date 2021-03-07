@@ -1,3 +1,28 @@
 .descriptionBlock {
     padding: 10px;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.headImage {
+
+}
+
+.headImage img {
+  width: 100%;
+}
+
+.profileImage {
+
+}
+
+.profileImage img {
+    width: 150px;
+}
+
+.description {
+    padding-top: 5px;
+    font-family: mr_ApexMk3ExtraLightG;
+    font-size: 18px;
+    color: #3f3f3f;
 }

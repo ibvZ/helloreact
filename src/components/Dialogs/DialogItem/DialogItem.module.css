@@ -1,0 +1,15 @@
+.dialogsItems {
+    color: #3f3f3f;
+    text-decoration: none;
+}
+
+.dialogsItems a {
+    color: #3f3f3f;
+    text-decoration: none;
+    font-family: mr_ApexMk3ExtraLightG;
+    padding: 5px;
+}
+
+.dialogsItems a.active {
+    color: #8a3324;
+}

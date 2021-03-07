@@ -1,5 +1,8 @@
 .item {
-    color: greenyellow;
+    display: grid;
+    color: #3f3f3f;
+    grid-template-columns: 1fr 11fr;
+    margin-bottom: 10px;
 }
 
 .item img {
@@ -7,3 +10,13 @@
     height: 50px;
     border-radius: 30px;
 }
+
+.likes {
+    padding-left: 100px;
+    color: #8a3324;
+}
+
+.postMessage {
+    padding-top: 15px;
+}
+
