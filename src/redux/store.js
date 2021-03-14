@@ -27,6 +27,7 @@ let store = {
     },
     sidebar: {},
   },
+
   _callSubscriber() {
     console.log('State was changed');
   },
@@ -34,6 +35,7 @@ let store = {
   getState() {
     return this._state;
   },
+
   subscribe(observer) {
     this._callSubscriber = observer;
   },
@@ -46,6 +48,5 @@ let store = {
     this._callSubscriber(this._state);
   },
 };
-
 
 export default store;
