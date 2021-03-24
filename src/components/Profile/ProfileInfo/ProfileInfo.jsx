@@ -1,6 +1,11 @@
 import s from './ProfileInfo.module.css';
+import Preloader from "../../common/Preloader/Preloader";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader />
+  }
+
   return (
     <div>
       <div className={s.headImage}>
@@ -8,7 +13,9 @@ const ProfileInfo = () => {
       </div>
       <div className={s.descriptionBlock}>
         <div className={s.profileImage}>
-          <img src='/images/ava_pavel.jpg'/>
+          <img src={ props.profile.photos.small !== null
+                      ? props.profile.photos.small
+                      : '/images/ava_pavel.jpg' }/>
         </div>
         <div className={s.description}>
           <span>Pavel</span><br/>
