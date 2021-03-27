@@ -1,5 +1,7 @@
 .header {
     grid-area: h; /*псевдоним*/
+    display: grid;
+    grid-template-columns: 10fr 2fr;
     background-color: #3f3f3f;
 
 }
@@ -8,5 +10,19 @@
     padding-left: 20px;
     font-family: molot;
     color: #e9e9e9;
+    font-size: 30px;
+}
+
+.loginBlock {
+    padding-top: 10px;
+    font-family: molot;
+    color: white;
+    font-size: 30px;
+}
+
+.loginBlock a {
+    text-decoration: none;
+    font-family: molot;
+    color: white;
     font-size: 30px;
 }
