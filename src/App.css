@@ -30,6 +30,11 @@ button:hover {
   color: #d3d3d3;
 }
 
+button:disabled {
+  background-color: #d3d3d3;
+  color: #3f3f3f;
+}
+
 textarea {
   background-color: white;
   color: #3f3f3f;
