@@ -8,4 +8,4 @@ let mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps,{ updateNewMessageBody, sendMessage})(Dialogs);
+export default connect(mapStateToProps,{updateNewMessageBody, sendMessage})(Dialogs);
