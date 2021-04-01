@@ -1,4 +1,5 @@
 import s from './Settings.module.css';
+import {withAuthRedirect} from "../hoc/withAuthRedirect";
 
 const Settings = () => {
   return (
@@ -8,4 +9,4 @@ const Settings = () => {
   );
 }
 
-export default Settings;
+export default withAuthRedirect(Settings);
