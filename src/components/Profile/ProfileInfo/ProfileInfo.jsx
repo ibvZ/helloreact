@@ -1,5 +1,6 @@
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -21,6 +22,7 @@ const ProfileInfo = (props) => {
           <span>Pavel</span><br/>
           <span>29 years</span><br/>
           <span>Software Developer</span><br/>
+          <ProfileStatus status='Hello'/>
         </div>
       </div>
     </div>
