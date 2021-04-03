@@ -22,8 +22,8 @@ const ProfileInfo = (props) => {
           <span>Pavel</span><br/>
           <span>29 years</span><br/>
           <span>Software Developer</span><br/>
-          <ProfileStatus status='Hello'/>
         </div>
+        <ProfileStatus status='Hello'/>
       </div>
     </div>
   );
