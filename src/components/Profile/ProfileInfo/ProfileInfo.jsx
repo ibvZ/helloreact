@@ -19,11 +19,12 @@ const ProfileInfo = (props) => {
                       : '/images/ava_pavel.jpg' }/>
         </div>
         <div className={s.description}>
+          <span>User ID: {props.profile.userId}</span><br/>
           <span>Pavel</span><br/>
           <span>29 years</span><br/>
           <span>Software Developer</span><br/>
         </div>
-        <ProfileStatus status='Hello'/>
+        <ProfileStatus status={props.status} updateProfileStatus={props.updateProfileStatus} />
       </div>
     </div>
   );
