@@ -76,7 +76,7 @@ export const toggleIsFollowingInProgess = (isFetching, userId) => ({
   type: TOGGLE_IS_FOLLOWING_IN_PROGRESS, isFetching, userId
 });
 
-export const getUsers = (currentPage, pageSize, initialCall = true) => {
+export const requestUsers = (currentPage, pageSize, initialCall = true) => {
   return (dispatch) => {
     dispatch(toggleIsFetching(true));
     if (!initialCall) {
