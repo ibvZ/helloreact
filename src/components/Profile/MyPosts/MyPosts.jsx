@@ -2,7 +2,7 @@ import React from 'react';
 import s from './MyPosts.module.css'
 import Post from "./Post/Post";
 import {Field, reduxForm} from "redux-form";
-import {requiredField, maxLengthCreator} from "./../../../utils/validators/validators";
+import {maxLengthCreator, requiredField} from "./../../../utils/validators/validators";
 import {Element} from "./../../common/FormsControls/FormsControls"
 
 const maxLengthPost = maxLengthCreator(10);
@@ -26,8 +26,8 @@ const AddNewPost = (props) => {
 
 const AddNewPostRedux = reduxForm({form: 'addNewPostForm'})(AddNewPost);
 
-const MyPosts = (props) => {
-  let postsElements = props.posts.map((p) => <Post message={p.message} likesCount={p.likesCount} />);
+const MyPosts = React.memo(props => {
+  let postsElements = props.posts.map((p) => <Post message={p.message} likesCount={p.likesCount}/>);
 
   let AddPost = (values) => {
     props.addPost(values.newPostElement);
@@ -36,12 +36,12 @@ const MyPosts = (props) => {
   return (
     <div className={s.postsBlock}>
       My Posts
-      <AddNewPostRedux onSubmit={AddPost} />
+      <AddNewPostRedux onSubmit={AddPost}/>
       <div className={s.posts}>
         {postsElements}
       </div>
     </div>
   );
-}
+});
 
 export default MyPosts;
