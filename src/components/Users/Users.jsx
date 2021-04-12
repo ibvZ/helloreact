@@ -1,52 +1,17 @@
 import s from './Users.module.css';
 import {NavLink} from "react-router-dom";
 import {usersAPI} from "../../api/api";
+import Paginator from "../common/Paginator/Paginator";
+import User from "./User";
 
-const Users = (props) => {
-  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-  let pages = [];
-  for (let i = 1; i <= pagesCount; i++) {
-    pages.push(i);
-  }
-
+const Users = ({currentPage, totalUsersCount, onPageChanged, pageSize,
+                users, followingInProgress, onClickUnfollow, onClickFollow}) => {
   return (
     <div className={s.users}>
-      <div>
-        {
-          pages.map(p => {
-            return <span className={props.currentPage === p && s.selectedPage}
-                         onClick={(e) => {props.onPageChanged(p) }}>{p} </span>
-          })
-        }
-      </div>
-      {
-        props.users.map(u => <div className={s.userBox} key={u.id}>
-          <div className={s.avaBox}>
-            <div>
-              <NavLink to={'/profile/' + u.id}>
-                <img src={ u.photos.small !== null ? u.photos.small : '/images/ava_pavel.jpg' } />
-              </NavLink>
-            </div>
-            <div>
-              { u.followed
-              ? <button disabled={props.followingInProgress.some(id => id === u.id)}
-                        onClick={ () => { props.onClickUnfollow(u.id) } }>Unfollow</button>
-              : <button disabled={props.followingInProgress.some(id => id === u.id)}
-                        onClick={ () => { props.onClickFollow(u.id) } }>Follow</button> }
-            </div>
-          </div>
-          <div className={s.informationBox}>
-            <div>
-              <div>{u.name}</div>
-              <div>{u.status}</div>
-            </div>
-            <div className={s.locationBox}>
-              <div>{"u.location.country"}</div>
-              <div>{"u.location.city"}</div>
-            </div>
-          </div>
-        </div>)
-      }
+      <Paginator currentPage={currentPage} totalUsersCount={totalUsersCount}
+                 onPageChanged={onPageChanged} pageSize={pageSize}/>
+      {users.map(u => <User user={u} followingInProgress={followingInProgress}
+                            onClickUnfollow={onClickUnfollow} onClickFollow={onClickFollow} />)}
     </div>
   );
 }

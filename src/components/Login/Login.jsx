@@ -9,9 +9,9 @@ import styles from "./../common/FormsControls/FormsControls.module.css"
 
 const Input = Element("input");
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <Field validate={[requiredField]} component={Input} name={"login"} placeholder={"Login"}/>
       </div>
@@ -21,7 +21,7 @@ const LoginForm = (props) => {
       <div>
         <Field component={"input"} name={"rememberMe"} type={"checkbox"} placeholder={"Login"}/> Remember Me
       </div>
-      { props.error && <div className={styles.formSummaryError}>{props.error}</div> }
+      { error && <div className={styles.formSummaryError}>{error}</div> }
       <div>
         <button>Login</button>
       </div>

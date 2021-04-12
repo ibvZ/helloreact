@@ -11,11 +11,13 @@ from "./../../redux/users-selectors"
 
 class UsersContainer extends React.Component {
   componentDidMount() {
-    this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+    const {currentPage, pageSize} = this.props;
+    this.props.requestUsers(currentPage, pageSize);
   }
 
   onPageChanged = (pageNumber) => {
-    this.props.requestUsers(pageNumber, this.props.pageSize, false);
+    const pageSize = this.props.pageSize;
+    this.props.requestUsers(pageNumber, pageSize, false);
   }
 
   onClickFollow = (userId) => {
@@ -44,17 +46,6 @@ class UsersContainer extends React.Component {
     );
   }
 }
-//
-// let mapStateToProps = (state) => {
-//   return {
-//     users: state.usersPage.users,
-//     pageSize: state.usersPage.pageSize,
-//     totalUsersCount: state.usersPage.totalUsersCount,
-//     currentPage: state.usersPage.currentPage,
-//     isFetching: state.usersPage.isFetching,
-//     followingInProgress: state.usersPage.followingInProgress,
-//   };
-// }
 
 let mapStateToProps = (state) => {
   return {
