@@ -4,7 +4,7 @@ const Post = (props) => {
   return (
     <div className={s.item}>
       <div className={s.ava}>
-        <img src='/images/ava_pavel.jpg' />
+        <img src='/images/ava_sasha.jpg' />
       </div>
       <div className={s.postMessage}>
         {props.message}

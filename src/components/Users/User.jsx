@@ -7,7 +7,7 @@ const User = ({user, followingInProgress, onClickUnfollow, onClickFollow}) => {
       <div className={s.avaBox}>
         <div>
           <NavLink to={'/profile/' + user.id}>
-            <img src={ user.photos.small !== null ? user.photos.small : '/images/ava_pavel.jpg' } />
+            <img src={ user.photos.small !== null ? user.photos.small : '/images/ava_sasha.jpg' } />
           </NavLink>
         </div>
         <div>
