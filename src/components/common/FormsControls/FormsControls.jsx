@@ -6,7 +6,7 @@ export const Element = (Element) => ({input, meta, ...props}) => {
   return (
   <div className={styles.formControl  + " " + (hasError ? styles.error : '')}>
     <div>
-      <Element {...input} placeholder={props.placeholder} />
+      <Element {...input} type={props.type} placeholder={props.placeholder} />
     </div>
     {hasError && <span>{meta.error}</span>}
   </div>

@@ -9,7 +9,8 @@ const Profile = (props) => {
                    isOwner={props.isOwner}
                    status={props.status}
                    savePhoto={props.savePhoto}
-                   updateProfileStatus={props.updateProfileStatus} />
+                   updateProfileStatus={props.updateProfileStatus}
+                   saveProfile={props.saveProfile} />
       <MyPostsContainer />
     </div>
   );
