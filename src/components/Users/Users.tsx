@@ -1,11 +1,23 @@
 import s from './Users.module.css';
-import {NavLink} from "react-router-dom";
 import {usersAPI} from "../../api/api";
 import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
+import {UserType} from "../../types/types";
 
-const Users = ({currentPage, totalUsersCount, onPageChanged, pageSize,
-                users, followingInProgress, onClickUnfollow, onClickFollow}) => {
+type PropsType = {
+    currentPage: number
+    totalUsersCount: number
+    onPageChanged: (pageNumber: number) => void
+    pageSize: number
+    users: Array<UserType>
+    isFetching: boolean
+    followingInProgress: Array<number>
+    onClickUnfollow: (userId: number) => void
+    onClickFollow: (userId: number) => void
+}
+
+const Users: React.FC<PropsType> = ({currentPage, totalUsersCount, onPageChanged, pageSize,
+                users, isFetching, followingInProgress, onClickUnfollow, onClickFollow}) => {
   return (
     <div className={s.users}>
       <Paginator currentPage={currentPage} totalItemsCount={totalUsersCount}

@@ -1,6 +1,5 @@
 import {usersAPI} from "../api/api";
-import {PhotosType} from "../types/types"
-
+import {PhotosType, UserType} from "../types/types"
 const FOLLOW = 'users/FOLLOW'
 const UNFOLLOW = 'users/UNFOLLOW'
 const SET_USERS = 'users/SET_USERS'
@@ -9,12 +8,6 @@ const SET_TOTAL_USERS_COUNT = 'users/SET_TOTAL_USERS_COUNT'
 const TOGGLE_IS_FETCHING = 'users/TOGGLE_IS_FETCHING'
 const TOGGLE_IS_FOLLOWING_IN_PROGRESS = 'users/TOGGLE_IS_FOLLOWING_IN_PROGRESS'
 
-type UserType = {
-  id: number
-  name: string
-  status: string
-  photos: PhotosType
-}
 
 let initialState = {
   users: [] as Array<UserType>,

@@ -1,3 +1,9 @@
+export type UserType = {
+    id: number
+    name: string
+    status: string
+    photos: PhotosType
+}
 export type PostType = {
     id: number
     message: string
